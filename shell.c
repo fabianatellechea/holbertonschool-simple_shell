@@ -51,7 +51,6 @@ void read_input(char *input)
 	if (bytes_read == 0)
 	{
 		/* End of file reached */
-		printf("Exiting shell...\n");
 		exit(0);
 	}
 
@@ -102,7 +101,7 @@ void execute_command(char **args)
 		/* Child process */
 		execv(args[0], args);
 		/* If we reach this line, there was an error */
-		printf("Error: Command not found\n");
+		fprintf(stderr, "%s: 1: %s: not found\n", args[0], args[0]);
 		exit(1);
 	}
 
