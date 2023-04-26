@@ -30,17 +30,16 @@ int main(void)
 		/* Check for exit command */
 		if (strcmp(args[0], "exit") == 0)
 		{
-			break;
+			/* Clear prompt */
+			printf("\r\033[K"); /* move cursor to beginning of line and clear line */
+			fflush(stdout);
+			return (0);
 		}
 
 
 		/* Execute command */
 		execute_command(args);
 	}
-
-	/* Clear prompt */
-	printf("\r\033[K"); /* move cursor to beginning of line and clear line */
-	fflush(stdout);
 
 	return (0);
 }
