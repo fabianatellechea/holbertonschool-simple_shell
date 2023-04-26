@@ -101,7 +101,7 @@ void execute_command(char **args)
 		/* Child process */
 		execv(args[0], args);
 		/* If we reach this line, there was an error */
-		fprintf(stderr, "%s: 1: %s: not found\n", args[0], args[2]);
+		fprintf(stderr, "%s: 1: %s: not found\n", args[0], args[0]);
 		exit(1);
 	}
 
