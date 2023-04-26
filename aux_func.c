@@ -6,7 +6,7 @@
  *Return: void
  */
 
-void read_input(char *input)
+void read_input(char *input, int *prompt)
 {
 	ssize_t bytes_read;
 	/* Read input from user */
@@ -20,6 +20,12 @@ void read_input(char *input)
 
 	/* Remove trailing newline from input */
 	input[strcspn(input, "\n")] = 0;
+
+	/* If user entered "exit", don't display prompt on next iteration */
+	if (strcmp(input, "exit") == 0)
+	{
+		*prompt = 0;
+	}
 }
 
 /**

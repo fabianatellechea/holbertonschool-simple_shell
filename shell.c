@@ -22,7 +22,7 @@ int main(void)
 		}
 
 		/* Read input from user */
-		read_input(input);
+		read_input(input, &prompt);
 
 		/* Parse arguments from input*/
 		parse_args(input, args);
@@ -35,7 +35,6 @@ int main(void)
 			fflush(stdout);
 			return (0);
 		}
-
 
 		/* Execute command */
 		execute_command(args);

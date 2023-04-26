@@ -9,7 +9,7 @@
 #define MAX_INPUT_LENGTH 100
 #define MAX_ARGS 10
 
-void read_input(char *input);
+void read_input(char *input, int *prompt);
 void parse_args(char *input, char **args);
 void execute_command(char **args);
 extern char **environ;
