@@ -10,8 +10,10 @@ int main(void)
 	char input[MAX_INPUT_LENGTH];
 	char *args[MAX_ARGS];
 
+
 	while (1)
 	{
+
 		/* Display prompt */
 		printf("$ ");
 		fflush(stdout);
@@ -27,10 +29,15 @@ int main(void)
 		{
 			break;
 		}
+
+
 		/* Execute command */
 		execute_command(args);
 	}
 
+	/* Clear prompt */
+	printf("\r\033[K"); /* move cursor to beginning of line and clear line */
+	fflush(stdout);
+
 	return (0);
 }
-
