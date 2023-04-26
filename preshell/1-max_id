@@ -1,5 +1,0 @@
-#!/bin/bash
-
-MAX_PID=$(cat /proc/sys/kernel/pid_max)
-
-echo $MAX_PID

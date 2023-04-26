@@ -24,17 +24,18 @@ int main(void)
 		parse_args(input, args);
 
 		/* Check for exit command */
-		if (strcmp(args[0], "exit") == 0)
+		if (strcmp(input, "exit") == 0)
 		{
 			/* Clear prompt */
-			printf("\r\033[K"); /* move cursor to beginning of line and clear line */
+			printf("\033[2K\r"); /* move cursor to beginning of line and clear line */
 			fflush(stdout);
 			return (0);
 		}
-	}
+
 
 		/* Execute command */
 		execute_command(args);
+	}
 
 	return (0);
 }
