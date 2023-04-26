@@ -12,5 +12,5 @@
 void read_input(char *input);
 void parse_args(char *input, char **args);
 void execute_command(char **args);
-
+extern char **environ;
 #endif
