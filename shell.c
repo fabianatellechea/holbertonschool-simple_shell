@@ -25,7 +25,6 @@ int main(void)
 		/* Check for exit command */
 		if (strcmp(args[0], "exit") == 0)
 		{
-			printf("Exiting shell...\n");
 			break;
 		}
 		/* Execute command */
