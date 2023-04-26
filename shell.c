@@ -9,14 +9,17 @@ int main(void)
 {
 	char input[MAX_INPUT_LENGTH];
 	char *args[MAX_ARGS];
+	int prompt = 1;
 
 
 	while (1)
 	{
-
-		/* Display prompt */
-		printf("$ ");
-		fflush(stdout);
+		if (prompt)
+		{
+			/* Display prompt */
+			printf("$ ");
+			fflush(stdout);
+		}
 
 		/* Read input from user */
 		read_input(input);
