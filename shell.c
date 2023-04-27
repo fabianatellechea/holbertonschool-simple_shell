@@ -18,7 +18,7 @@ int main(void)
 		fflush(stdout);
 
 		/* Read input from user */
-		read_input(*input);
+		read_input(input);
 
 		/* Parse arguments from input*/
 		parse_args(*input, args);

@@ -6,18 +6,17 @@
  *Return: void
  */
 
-void read_input(char *input)
+void read_input(char **input)
 {
-	size_t input_size = MAX_INPUT_LENGTH;
+	size_t input_size = 0;
 
-	if (getline(&input, &input_size, stdin) == -1)
+	if (getline(input, &input_size, stdin) == -1)
 	{
-
 		exit(0);
-
 	}
 
-	input[strcspn(input, "\n")] = '\0';
+	(*input)[strcspn(*input, "\n")] = '\0';
+
 }
 
 /**
