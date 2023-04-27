@@ -44,13 +44,13 @@ int main(void)
 		execute_command(args);
 	}
 
-	if (spacechecker(line_buf))
+	if (spacechecker(line_buf)) /** verify if the line entry have some whitespace*/
 	{
-		gen_array(line_buf, array, "\t\n ");
-		if (ver_dir(array[0]))
+		gen_array(line_buf, array, "\t\n "); /** if the line have whitespace, the function call a gen_array that generates a array  of separates words for tabs, \n and whites spaces*/
+		if (ver_dir(array[0])) /** verify if the first word of the array is a valid directory*/
 		{
-			if (ver_stat(array[0]))
-				execute_command(array);
+			if (ver_stat(array[0])) /** if is a directory, verify if this directory exist with ver_stat*/
+				execute_command(array);/** if the directory exist execute the command with execute_command*/
 		}
 		else
 		{
