@@ -25,5 +25,7 @@ This project was developed and tested on a Linux operating system (Ubuntu 20.04 
 
 This project was developed by Giselle Nieves and Fabiana Tellechea.
 If you have any questions or comments, please contact me at my email
+
 Fabiana Tellechea <fabianagtellechea@gmail.com>
+
 Giselle Nieves <anatanonamewanamedesuka2@gmail.com>
