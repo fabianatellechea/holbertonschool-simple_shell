@@ -41,6 +41,7 @@ void parse_args(char *input, char **args)
 	}
 
 	args[count] = NULL;
+
 }
 
 /**
