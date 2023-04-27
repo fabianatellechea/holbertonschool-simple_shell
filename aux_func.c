@@ -83,3 +83,47 @@ void execute_command(char **args)
 		exit(1);
 	}
 }
+
+/**
+ * path_ver - check the current path exist or no
+ * @buff: Buffer
+ * @arr: pointer to a pointer to a string
+ * Return: Direction path exist or no
+ */
+
+char *path_ver(char *buff, char **arr)
+{
+	struct stat sta;
+	char *path = NULL;
+	int i;
+
+	for (i = 0; arr[i] != NULL; i++)
+	{
+		path = malloc(strlen(arr[i]) + strlen(buff) + 2);
+		if (path == NULL)
+			return (NULL);
+
+		sprintf(path, "%s/%s", arr[i], buff);
+		if (stat(path, &sta) == 0)
+			return (path);
+		free(path);
+	}
+	return (NULL);
+}
+
+/**
+ * frees_arr - Free the array direction
+ * @direc: Direction of array
+ * Return: Always 0
+ */
+
+void frees_arr(char **direc)
+{
+	int i = 0;
+
+	if (direc)
+	{
+		for (i = 0; direc[i]; i++)
+			free(direc[i]);
+	}
+}
