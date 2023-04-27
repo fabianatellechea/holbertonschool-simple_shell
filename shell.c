@@ -28,8 +28,6 @@ int main(void)
 		/* Check for exit command */
 		if (strcmp(*input, "exit") == 0)
 		{
-			/* Clear prompt */
-			printf("\033[2K\r"); /* move cursor to beginning of line and clear line */
 			fflush(stdout);
 			return (0);
 		}
