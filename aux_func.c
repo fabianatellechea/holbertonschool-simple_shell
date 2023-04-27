@@ -8,19 +8,16 @@
 
 void read_input(char *input)
 {
-	ssize_t bytes_read;
-	/* Read input from user */
-	bytes_read = read(STDIN_FILENO, input, MAX_INPUT_LENGTH);
+	size_t input_size = MAX_INPUT_LENGTH;
 
-	if (bytes_read == 0)
+	if (getline(&input, &input_size, stdin) == -1)
 	{
-		/* End of file reached */
+
 		exit(0);
+
 	}
 
-	/* Remove trailing newline from input */
-	input[strcspn(input, "\n")] = 0;
-
+	input[strcspn(input, "\n")] = '\0';
 }
 
 /**
