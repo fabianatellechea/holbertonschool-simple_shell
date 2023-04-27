@@ -2,16 +2,26 @@
 
 .SH NAME
 
+
+
 \fBshell - command-line interface for interacting with the operating system.\fR
 
 .BR
+
+
 .SH DESCRIPTION
+
+
 
 \fBA shell is a program that provides a command-line interface for interacting with the operating system.\fR The most commonly used shells in Unix-like operating systems are Bash, Zsh, and Ksh.
 
 When a user types a command into a shell, the shell interprets the command and executes it. The shell also provides features like command history, tab completion, and shell scripting.
 
+
+
 .SH COMMANDS
+
+
 
 Here are some basic commands that can be used in a shell:
 
@@ -33,7 +43,11 @@ Here are some basic commands that can be used in a shell:
 
 - \fBcat:\fR Concatenate and print files
 
+
+
 .SH SPECIAL CHARACTERS
+
+
 
 Here are some special characters that are commonly used in shell commands:
 
@@ -47,7 +61,11 @@ Here are some special characters that are commonly used in shell commands:
 
 - \fB|:\fR Sends the output of one command to the input of another command.
 
+
+
 .SH SCRIPTING
+
+
 
 Shell scripting involves writing a series of commands in a file that can be executed as a script. Here are some basic concepts in shell scripting:
 
@@ -59,7 +77,11 @@ Shell scripting involves writing a series of commands in a file that can be exec
 
 - \fBFunctions:\fR Blocks of code that can be reused throughout a script.
 
+
+
 .SH EXAMPLES
+
+
 
 Here are some examples of how to use basic shell commands:
 
@@ -81,10 +103,18 @@ Here are some examples of how to use basic shell commands:
 
 - \fBcat file.txt:\fR Print the contents of file.txt to the terminal
 
+
+
 .SH CONCLUSION
+
+
 
 \fBShell scripting is a powerful tool for interacting with the operating system.\fRWith a basic understanding of shell commands, special characters, and scripting concepts, you can automate tasks and perform complex operations on your system.
 
+
+
 .SH AUTHOR
+
+
 
 \fBThis manual page was created by Giselle Nieves and Fabiana Tellechea Cohort #20.\fR
