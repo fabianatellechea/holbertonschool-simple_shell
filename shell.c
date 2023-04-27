@@ -7,14 +7,9 @@
 
 int main(void)
 {
-<<<<<<< HEAD
 	char *line_buf = NULL, *path_com = NULL;
 	char *array[1024], *array_dir[1024];
-
-	char input[MAX_INPUT_LENGTH];
-=======
 	char *input[MAX_INPUT_LENGTH];
->>>>>>> 0e94644c6e84c1e4733c5102a6ae908c1f28145f
 	char *args[MAX_ARGS];
 
 
@@ -68,5 +63,3 @@ int main(void)
 
 	return (0);
 }
-
-
