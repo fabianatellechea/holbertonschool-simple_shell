@@ -21,6 +21,17 @@ This project was developed and tested on a Linux operating system (Ubuntu 20.04 
 4. Script library (unistd.h)
 5. String library (string.h)
 
+## HOW TO USE
+
+To compile the project, the following command must be executed in the terminal:
+
+gcc -o simple_shell simple_shell.c
+
+Once compiled, you can run the simple shell with the following command:
+
+./simple_shell
+
+Once the simple shell is started, you can run operating system commands or external programs as you normally would in the terminal. To exit the simple shell, you can use the "exit" command.
 ## AUTHORS
 
 This project was developed by Giselle Nieves and Fabiana Tellechea.
