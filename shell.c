@@ -51,7 +51,6 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ "); /* Display prompt */
 		fflush(stdout);
 		read_input(input); /* Read input from user */
 		parse_args(input[0], args); /* Parse arguments from input */
