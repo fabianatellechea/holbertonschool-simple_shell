@@ -1,72 +1,74 @@
 #include "main.h"
 
 /**
- * main - main function to simple shell
+ * execute_input - reduce function main
+ * @input: usr
+ * Return: 0
+ */
+
+void execute_input(char *input)
+{
+	char *line_buf = calloc(1024, sizeof(char));
+
+	strcpy(line_buf = input);
+
+	char *array[1024];
+
+	gen_array(line_buf, array, "\t\n ");
+
+	if (ver_dir(array[0]))
+	{
+		if (ver_stat(array[0]))
+		{
+			execute_command(array);
+		}
+	}
+	else
+	{
+		char *path_com = path_ver(array[0], array_di);
+
+		if (path_com)
+		{
+			aux_excute_command(array, path_com);
+			free(path_com);
+			frees_arr(array_di);
+		}
+		else
+		{
+			printf("%s: Command not found\n", array[0]);
+		}
+	}
+	free(line_buf);
+}
+
+/**
+ * main - main function for simple shell
  * Return: 0
  */
 
 int main(void)
 {
-<<<<<<< HEAD
 	char *line_buf = NULL, *path_com = NULL;
-	char *array[1024], *array_dir[1024];
-
-	char input[MAX_INPUT_LENGTH];
-=======
-	char *input[MAX_INPUT_LENGTH];
->>>>>>> 0e94644c6e84c1e4733c5102a6ae908c1f28145f
-	char *args[MAX_ARGS];
-
+	char *array[1024], *array_di[1024], *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
 
 	while (1)
 	{
-		/* Display prompt */
-		printf("$ ");
+		printf("$ "); /* Display prompt */
 		fflush(stdout);
-
-		/* Read input from user */
-		read_input(input);
-
-		/* Parse arguments from input*/
-		parse_args(*input, args);
-
-		/* Check for exit command */
-		if (strcmp(*input, "exit") == 0)
+		read_input(input); /* Read input from user */
+		parse_args(input[0], args); /* Parse arguments from input */
+		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
-			/* Clear prompt */
-			printf("\033[2K\r"); /* move cursor to beginning of line and clear line */
 			fflush(stdout);
 			return (0);
 		}
 
+		execute_command(args); /* Execute command */
 
-		/* Execute command */
-		execute_command(args);
-	}
-
-	if (spacechecker(line_buf)) /** verify if the line entry have some whitespace*/
-	{
-		gen_array(line_buf, array, "\t\n "); /** if the line have whitespace, the function call a gen_array that generates a array  of separates words for tabs, \n and whites spaces*/
-		if (ver_dir(array[0])) /** verify if the first word of the array is a valid directory*/
+		if (spacechecker(input[0]))
 		{
-			if (ver_stat(array[0])) /** if is a directory, verify if this directory exist with ver_stat*/
-				execute_command(array);/** if the directory exist execute the command with execute_command*/
-		}
-		else
-		{
-			path_com = path_ver(array[0], array_dir);
-			if (path_com)
-			{
-			aux_excute_command(array, path_com);
-				free(path_com);
-				frees_arr(array_dir);
-			}
-			else
-				printf("%s: Command not found\n", array[0]);
+			execute_input(input[0]);
 		}
 	}
-
 	return (0);
 }
-
-

@@ -20,6 +20,13 @@ void gen_array(char *buff, char **arr, char *delimit)
 	}
 }
 
+/**
+ * spacechecker - checker if the code have or not a space in str
+ * @input: input user
+ * Return: 1 or 0
+ *
+ */
+
 int spacechecker(char *input)
 {
 	int i = 0;
@@ -65,18 +72,22 @@ int ver_stat(char *filename)
 {
 	struct stat filestat;
 
-	if(stat(filename, &filestat) == 0)
+	if (stat(filename, &filestat) == 0)
+	{
 		return (1);
-	else
-		printf("No such file or directory\n");
+	}
+		else
+		{
+			printf("No such file or directory\n");
 	return (0);
+		}
 }
 
 /**
- * aux_execute_command - funtion that creates another process
+ * aux_excute_command - funtion that creates another process
  * @argv: line command content
  * @path: path
- * Retrun: 0 or -1
+ * Return: 0 or -1
  *
  *
  */
@@ -96,4 +107,3 @@ int aux_excute_command(char **argv, char *path)
 
 	return (0);
 }
-
