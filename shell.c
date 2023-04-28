@@ -8,14 +8,11 @@
 
 void execute_input(char *input)
 {
-<<<<<<< HEAD
 	char *line_buf = calloc(1024, sizeof(char));
-=======
 	char *line_buf = NULL, *path_com = NULL;
 	char *array[1024], *array_dir[1024];
 	char *input[MAX_INPUT_LENGTH];
 	char *args[MAX_ARGS];
->>>>>>> ac7ab4b81d186f237d5184460c9b75c7db42d961
 
 	strcpy(line_buf = input);
 
@@ -36,14 +33,11 @@ void execute_input(char *input)
 
 		if (path_com)
 		{
-<<<<<<< HEAD
 			aux_excute_command(array, path_com);
 			free(path_com);
 			frees_arr(array_di);
-=======
 			fflush(stdout);
 			return (0);
->>>>>>> ac7ab4b81d186f237d5184460c9b75c7db42d961
 		}
 		else
 		{
