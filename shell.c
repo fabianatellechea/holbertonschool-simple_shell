@@ -50,10 +50,13 @@ int main(void)
 	char *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
 
 	while (1)
-	
 	{
-		printf("$ ");
-		fflush(stdout);
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+			fflush(stdout);
+		}
+
 		read_input(input); /* Read input from user */
 		parse_args(input[0], args); /* Parse arguments from input */
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
