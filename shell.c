@@ -59,6 +59,11 @@ int main(void)
 
 		read_input(&input); /* Read input from user */
 		parse_args(input, args); /* Parse arguments from input */
+		if (spacechecker(input))
+		{
+			free(input);
+			continue;
+		}
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
 
@@ -68,11 +73,6 @@ int main(void)
 		}
 
 		execute_command(args); /* Execute command */
-
-		if (spacechecker(input))
-		{
-			execute_input(input);
-		}
 		free(input);
 	}
 	return (0);

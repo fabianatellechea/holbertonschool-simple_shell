@@ -33,12 +33,12 @@ void parse_args(char *input, char **args)
 	int count = 0;
 
 	/* Parse arguments from input*/
-	token = strtok(input, " ");
+	token = strtok(input, " \n\t");
 
 	while (token && count < MAX_ARGS)
 	{
 		args[count++] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " \n\t");
 	}
 
 	args[count] = NULL;
