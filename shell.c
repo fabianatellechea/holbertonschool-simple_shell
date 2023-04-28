@@ -48,6 +48,7 @@ void execute_input(char *input)
 int main(void)
 {
 	char *args[MAX_ARGS], *input = NULL;
+
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -61,6 +62,7 @@ int main(void)
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
 
+			free(input);
 			fflush(stdout);
 			return (0);
 		}
@@ -71,6 +73,7 @@ int main(void)
 		{
 			execute_input(input);
 		}
+		free(input);
 	}
 	return (0);
 }
