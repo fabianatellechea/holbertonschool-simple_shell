@@ -48,9 +48,13 @@ void execute_input(char *input)
 int main(void)
 {
 	char *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
+	char *path_com = NULL;
+	char *array_di[1024];
 
 	while (1)
+	
 	{
+		printf("$ ");
 		fflush(stdout);
 		read_input(input); /* Read input from user */
 		parse_args(input[0], args); /* Parse arguments from input */
@@ -65,6 +69,8 @@ int main(void)
 		if (spacechecker(input[0]))
 		{
 			execute_input(input[0]);
+			free(path_com);
+			frees_arr(array_di);
 		}
 	}
 	return (0);
