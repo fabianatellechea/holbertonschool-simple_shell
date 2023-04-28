@@ -47,8 +47,7 @@ void execute_input(char *input)
 
 int main(void)
 {
-	char *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
-
+	char *args[MAX_ARGS], *input = NULL;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -57,19 +56,20 @@ int main(void)
 			fflush(stdout);
 		}
 
-		read_input(input); /* Read input from user */
-		parse_args(input[0], args); /* Parse arguments from input */
+		read_input(&input); /* Read input from user */
+		parse_args(input, args); /* Parse arguments from input */
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
+
 			fflush(stdout);
 			return (0);
 		}
 
 		execute_command(args); /* Execute command */
 
-		if (spacechecker(input[0]))
+		if (spacechecker(input))
 		{
-			execute_input(input[0]);
+			execute_input(input);
 		}
 	}
 	return (0);
