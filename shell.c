@@ -3,21 +3,15 @@
 /**
  * execute_input - reduce function main
  * @input: usr
- * Return: 0
  */
 
 void execute_input(char *input)
 {
 	char *line_buf = calloc(1024, sizeof(char));
-	char *line_buf = NULL, *path_com = NULL;
-	char *array[1024], *array_dir[1024];
-	char *input[MAX_INPUT_LENGTH];
-	char *args[MAX_ARGS];
+	char *path_com = NULL;
+	char *array[1024], *array_di[1024];
 
-	strcpy(line_buf = input);
-
-	char *array[1024];
-
+	strcpy(line_buf, input);
 	gen_array(line_buf, array, "\t\n ");
 
 	if (ver_dir(array[0]))
@@ -29,7 +23,7 @@ void execute_input(char *input)
 	}
 	else
 	{
-		char *path_com = path_ver(array[0], array_di);
+		path_com = path_ver(array[0], array_di);
 
 		if (path_com)
 		{
@@ -37,7 +31,6 @@ void execute_input(char *input)
 			free(path_com);
 			frees_arr(array_di);
 			fflush(stdout);
-			return (0);
 		}
 		else
 		{
@@ -54,8 +47,7 @@ void execute_input(char *input)
 
 int main(void)
 {
-	char *line_buf = NULL, *path_com = NULL;
-	char *array[1024], *array_di[1024], *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
+	char *args[MAX_ARGS], *input[MAX_INPUT_LENGTH];
 
 	while (1)
 	{
