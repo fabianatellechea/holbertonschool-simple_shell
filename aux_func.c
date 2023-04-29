@@ -12,7 +12,7 @@ void read_input(char **input)
 
 	if (getline(input, &input_size, stdin) == -1)
 	{
-		free(*input);
+		/*free(*input);*/
 		exit(0);
 	}
 
@@ -64,16 +64,20 @@ void execute_command(char **args)
 		if (args[0][0] == '.' && args[0][1] == '/')
 		{
 			if (access(args[0], X_OK) == 0)
-                	{
+			{
 				execve(args[0], args, environ);
-                	}
+			}
 		}
 
 		/* Child process */
 		execve(args[0], args, environ);
-		/* If we reach this line, there was an error */
-		fprintf(stderr, "%s: 1: %s: not found\n", args[0], args[0]);
-		exit(1);
+		if (execve(args[0], args, environ) == -1)
+		{
+			/* If we reach this line, there was an error */
+			fprintf(stderr, "%s: 1: %s: not found\n", args[0], args[0]);
+			free(args[0]);
+			exit(1);
+		}
 	}
 
 	else if (pid > 0)

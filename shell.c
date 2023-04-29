@@ -58,6 +58,7 @@ int main(void)
 		}
 
 		read_input(&input); /* Read input from user */
+		parse_args(input, args);
 
 		if (spacechecker(input))
 		{
@@ -65,7 +66,6 @@ int main(void)
 			continue;
 		}
 
-		parse_args(input, args); /* Parse arguments from input */
 		if (args[0] == NULL)
 		{
 			free(input);
@@ -77,7 +77,7 @@ int main(void)
 
 			free(input);
 			fflush(stdout);
-			return (0);
+			exit(0);
 		}
 
 		execute_command(args); /* Execute command */
