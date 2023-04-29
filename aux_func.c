@@ -61,6 +61,14 @@ void execute_command(char **args)
 
 	if (pid == 0)
 	{
+		if (args[0][0] == '.' && args[0][1] == '/')
+		{
+			if (access(args[0], X_OK) == 0)
+                	{
+				execve(args[0], args, environ);
+                	}
+		}
+
 		/* Child process */
 		execve(args[0], args, environ);
 		/* If we reach this line, there was an error */

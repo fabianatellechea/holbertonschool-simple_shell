@@ -71,10 +71,6 @@ int main(void)
 			free(input);
 			continue;
 		}
-		if (access(args[0], X_OK) == 0)
-		{
-			execute_command(args);
-		}
 
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
