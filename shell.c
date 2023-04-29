@@ -68,7 +68,12 @@ int main(void)
 		parse_args(input, args); /* Parse arguments from input */
 		if (args[0] == NULL)
 		{
+			free(input);
 			continue;
+		}
+		if (access(args[0], X_OK) == 0)
+		{
+			execute_command(args);
 		}
 
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
