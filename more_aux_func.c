@@ -33,18 +33,27 @@ int spacechecker(char *input)
 	int spacematch;
 	int len = strlen(input) - 1;
 
-	while (input[i] == ' ')
+	if (input == NULL)
+	{
+		return (0);
+	}
+
+	while (i < len && input[i] == ' ')
 	{
 		i++;
 	}
+	if (i == len)
+	{
+		return (0);
+	}
 
-	while (input[len] == ' ')
+	while (len >= 0 && input[len] == ' ')
 	{
 		len--;
 	}
 	for (spacematch = i; spacematch <= len; spacematch++)
 	{
-		if (input[i] == ' ')
+		if (input[spacematch] == ' ')
 		{
 			return (1); /** if found the space return 1*/
 		}
