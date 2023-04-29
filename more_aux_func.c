@@ -30,8 +30,19 @@ void gen_array(char *buff, char **arr, char *delimit)
 int spacechecker(char *input)
 {
 	int i = 0;
+	int spacematch;
+	int len = strlen(input) - 1;
 
-	for (i = 0; input[i] != '\0'; i++)
+	while (input[i] == ' ')
+	{
+		i++;
+	}
+
+	while (input[len] == ' ')
+	{
+		len--;
+	}
+	for (spacematch = i; spacematch <= len; spacematch++)
 	{
 		if (input[i] == ' ')
 		{

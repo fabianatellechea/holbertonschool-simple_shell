@@ -58,12 +58,13 @@ int main(void)
 		}
 
 		read_input(&input); /* Read input from user */
-		parse_args(input, args); /* Parse arguments from input */
 		if (spacechecker(input))
 		{
 			free(input);
 			continue;
 		}
+		parse_args(input, args); /* Parse arguments from input */
+
 		if (strcmp(args[0], "exit") == 0) /* Check for exit command */
 		{
 
