@@ -95,45 +95,43 @@ void execute_command(char **args)
 }
 
 /**
- * path_ver - check the current path exist or no
- * @buff: Buffer
- * @arr: pointer to a pointer to a string
- * Return: Direction path exist or no
+ * spacechecker - checker if the code have or not a space in str
+ * @input: input user
+ * Return: 1 or 0
+ *
  */
 
-char *path_ver(char *buff, char **arr)
-{
-	struct stat sta;
-	char *path = NULL;
-	int i;
-
-	for (i = 0; arr[i] != NULL; i++)
-	{
-		path = malloc(strlen(arr[i]) + strlen(buff) + 2);
-		if (path == NULL)
-			return (NULL);
-
-		sprintf(path, "%s/%s", arr[i], buff);
-		if (stat(path, &sta) == 0)
-			return (path);
-		free(path);
-	}
-	return (NULL);
-}
-
-/**
- * frees_arr - Free the array direction
- * @direc: Direction of array
- * Return: Always 0
- */
-
-void frees_arr(char **direc)
+int spacechecker(char *input)
 {
 	int i = 0;
+	int spacematch;
+	int len = strlen(input) - 1;
 
-	if (direc)
+	if (input == NULL)
 	{
-		for (i = 0; direc[i]; i++)
-			free(direc[i]);
+		return (0);
 	}
+
+	while (i < len && input[i] == ' ')
+	{
+		i++;
+	}
+	if (i == len)
+	{
+		return (0);
+	}
+
+	while (len >= 0 && input[len] == ' ')
+	{
+		len--;
+	}
+	for (spacematch = i; spacematch <= len; spacematch++)
+	{
+		if (input[spacematch] == ' ')
+		{
+			return (1); /** if found the space return 1*/
+		}
+	}
+
+	return (0); /** if not found the space return 0*/
 }
