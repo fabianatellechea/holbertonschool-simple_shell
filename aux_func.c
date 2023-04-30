@@ -12,7 +12,7 @@ void read_input(char **input)
 
 	if (getline(input, &input_size, stdin) == -1)
 	{
-		/*free(*input);*/
+		free(*input);
 		exit(0);
 	}
 

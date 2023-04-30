@@ -82,6 +82,7 @@ int main(void)
 
 		execute_command(args); /* Execute command */
 		free(input);
+
 	}
 	return (0);
 }
